@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BlindaCredit — Manual del Distribuidor</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  
+  html { scroll-behavior: smooth; }
+  
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", system-ui, sans-serif;
+    color: #1d1d1f;
+    background: #ffffff;
+    line-height: 1.5;
+    font-weight: 400;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    background: #fbfbfd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 24px;
+    text-align: center;
+    position: relative;
+  }
+
+  .hero-logo {
+    width: 88px;
+    height: 88px;
+    border-radius: 22px;
+    background: #1a1a2e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+    box-shadow: 0 8px 32px rgba(26,26,46,0.12);
+  }
+
+  .hero-logo svg { width: 50px; height: 50px; }
+
+  .hero h1 {
+    font-size: 56px;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    margin-bottom: 12px;
+    background: linear-gradient(180deg, #1d1d1f 0%, #4a4a4a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero-tagline {
+    font-size: 21px;
+    color: #86868b;
+    font-weight: 400;
+    max-width: 540px;
+    margin: 0 auto 48px;
+    letter-spacing: -0.01em;
+  }
+
+  .hero-scroll {
+    color: #86868b;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-top: 32px;
+    opacity: 0.7;
+  }
+
+  /* SECTIONS */
+  section {
+    padding: 100px 24px;
+    max-width: 980px;
+    margin: 0 auto;
+  }
+
+  .section-tag {
+    color: #e74c3c;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  .section-subtitle {
+    font-size: 21px;
+    color: #86868b;
+    font-weight: 400;
+    max-width: 640px;
+    margin: 0 auto 64px;
+    text-align: center;
+    letter-spacing: -0.01em;
+    line-height: 1.4;
+  }
+
+  /* WHAT IS */
+  .what-is {
+    background: #ffffff;
+  }
+
+  .what-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 48px;
+  }
+
+  .what-card {
+    background: #fbfbfd;
+    border-radius: 22px;
+    padding: 40px;
+    transition: transform 0.3s ease;
+  }
+
+  .what-card:hover { transform: translateY(-4px); }
+
+  .what-card h3 {
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin-bottom: 12px;
+  }
+
+  .what-card p {
+    font-size: 16px;
+    color: #515154;
+    line-height: 1.5;
+  }
+
+  /* BENEFITS - DARK */
+  .benefits {
+    background: #1a1a2e;
+    color: #f5f5f7;
+    max-width: none;
+    margin: 0;
+    padding: 100px 24px;
+  }
+
+  .benefits-inner { max-width: 980px; margin: 0 auto; }
+
+  .benefits h2 { color: #f5f5f7; }
+
+  .benefits .section-subtitle { color: #86868b; }
+
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 48px;
+  }
+
+  .benefit-card {
+    background: #2a2a44;
+    border-radius: 22px;
+    padding: 40px 32px;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .benefit-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    font-size: 28px;
+  }
+
+  .benefit-card h3 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+  }
+
+  .benefit-card p {
+    color: #a1a1a6;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  /* STEPS */
+  .steps-section { background: #fbfbfd; max-width: none; padding: 100px 24px; }
+  .steps-inner { max-width: 980px; margin: 0 auto; }
+
+  .step {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 32px;
+    padding: 48px 0;
+    border-bottom: 1px solid #d2d2d7;
+    align-items: start;
+  }
+
+  .step:last-child { border-bottom: none; }
+
+  .step-number {
+    font-size: 72px;
+    font-weight: 700;
+    color: #e74c3c;
+    line-height: 1;
+    letter-spacing: -0.04em;
+  }
+
+  .step-content h3 {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+    line-height: 1.2;
+  }
+
+  .step-content p {
+    font-size: 17px;
+    color: #515154;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+
+  .step-content p:last-child { margin-bottom: 0; }
+
+  .step-tip {
+    margin-top: 20px;
+    padding: 20px 24px;
+    background: #fff;
+    border-radius: 16px;
+    border-left: 3px solid #e74c3c;
+  }
+
+  .step-tip strong { color: #e74c3c; font-weight: 600; }
+
+  .step-tip p { font-size: 15px; color: #1d1d1f; margin: 0; }
+
+  /* MOBILE MOCKUP */
+  .mockup-row {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 48px;
+    align-items: center;
+    margin-top: 48px;
+  }
+
+  .mockup-text h3 {
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+    line-height: 1.15;
+  }
+
+  .mockup-text p {
+    font-size: 17px;
+    color: #515154;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+
+  .phone-frame {
+    background: #1a1a2e;
+    border-radius: 36px;
+    padding: 12px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+  }
+
+  .phone-screen {
+    background: #f0f4ff;
+    border-radius: 26px;
+    padding: 20px 16px;
+    min-height: 480px;
+  }
+
+  /* PLANS */
+  .plans-section { background: #ffffff; }
+
+  .plans-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 48px;
+  }
+
+  .plan-card {
+    background: #fbfbfd;
+    border-radius: 22px;
+    padding: 40px 32px;
+    text-align: center;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+  }
+
+  .plan-card.featured {
+    background: #1a1a2e;
+    color: #f5f5f7;
+    transform: scale(1.05);
+  }
+
+  .plan-card.featured .plan-name { color: #e74c3c; }
+  .plan-card.featured .plan-price { color: #f5f5f7; }
+  .plan-card.featured .plan-features li { color: #d2d2d7; border-color: rgba(255,255,255,0.1); }
+
+  .plan-badge {
+    display: inline-block;
+    background: #e74c3c;
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 20px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .plan-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #e74c3c;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .plan-price {
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .plan-price span {
+    font-size: 16px;
+    color: #86868b;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+
+  .plan-period {
+    font-size: 13px;
+    color: #86868b;
+    margin-bottom: 24px;
+  }
+
+  .plan-features {
+    list-style: none;
+    text-align: left;
+  }
+
+  .plan-features li {
+    padding: 12px 0;
+    border-bottom: 1px solid #d2d2d7;
+    font-size: 14px;
+    color: #1d1d1f;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .plan-features li:last-child { border-bottom: none; }
+
+  .check { color: #34c759; font-weight: bold; }
+  .cross { color: #ff3b30; font-weight: bold; }
+
+  /* FAQ */
+  .faq-section { background: #fbfbfd; }
+
+  .faq-item {
+    background: #ffffff;
+    border-radius: 16px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .faq-question {
+    padding: 24px 28px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    gap: 16px;
+  }
+
+  .faq-question > span:first-child { flex: 1; }
+
+  .faq-icon {
+    font-size: 24px;
+    color: #86868b;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    line-height: 1;
+  }
+
+  .faq-item.active .faq-icon { transform: rotate(45deg); color: #e74c3c; }
+
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+
+  .faq-item.active .faq-answer { max-height: 600px; }
+
+  .faq-answer-inner {
+    padding: 0 28px 24px;
+    color: #515154;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  /* WARNING */
+  .warning-block {
+    background: #fff5f5;
+    border-radius: 22px;
+    padding: 40px;
+    margin-top: 48px;
+    border: 1px solid #fadcd9;
+    text-align: center;
+  }
+
+  .warning-block h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #c0392b;
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+
+  .warning-block p {
+    font-size: 16px;
+    color: #515154;
+    line-height: 1.6;
+    max-width: 580px;
+    margin: 0 auto;
+  }
+
+  /* FOOTER */
+  footer {
+    background: #1a1a2e;
+    color: #86868b;
+    text-align: center;
+    padding: 64px 24px;
+  }
+
+  footer .logo-small {
+    width: 48px; height: 48px;
+    background: #2a2a44;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+
+  footer p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  footer .brand {
+    color: #f5f5f7;
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 40px; }
+    .hero-tagline { font-size: 18px; }
+    h2 { font-size: 32px; }
+    .section-subtitle { font-size: 17px; }
+    .what-grid, .benefits-grid { grid-template-columns: 1fr; }
+    .step { grid-template-columns: 60px 1fr; gap: 16px; padding: 32px 0; }
+    .step-number { font-size: 48px; }
+    .step-content h3 { font-size: 22px; }
+    .step-content p { font-size: 15px; }
+    .mockup-row { grid-template-columns: 1fr; }
+    .mockup-text h3 { font-size: 26px; }
+    .plans-grid { grid-template-columns: 1fr; }
+    .plan-card.featured { transform: none; }
+    section { padding: 64px 20px; }
+    .benefits, .steps-section, .plans-section, .faq-section { padding: 64px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-logo">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <path d="M50 18 L78 30 L78 56 Q78 76 50 84 Q22 76 22 56 L22 30 Z" fill="#16213e" stroke="#e74c3c" stroke-width="2"/>
+      <rect x="40" y="54" width="20" height="14" rx="3" fill="#e74c3c"/>
+      <path d="M43 54 Q43 45 50 45 Q57 45 57 54" fill="none" stroke="#e74c3c" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>
+  </div>
+  <h1>BlindaCredit</h1>
+  <p class="hero-tagline">La red privada que protege tu trabajo y tus ganancias.</p>
+  <p class="hero-scroll">↓ Desliza para conocer más</p>
+</section>
+
+<!-- WHAT IS -->
+<section class="what-is">
+  <p class="section-tag">QUÉ ES BLINDACREDIT</p>
+  <h2>Tu red de confianza.</h2>
+  <p class="section-subtitle">Una plataforma cerrada y exclusiva donde distribuidores y prestamistas comparten información sobre personas con historial de no pago, para que nadie en la red vuelva a perder dinero con la misma persona.</p>
+
+  <div class="what-grid">
+    <div class="what-card">
+      <h3>Privada</h3>
+      <p>Solo miembros aprobados acceden a la información. No es pública ni está disponible en internet.</p>
+    </div>
+    <div class="what-card">
+      <h3>Colaborativa</h3>
+      <p>Cada reporte que haces protege a la red, y cada reporte que hace alguien más te protege a ti.</p>
+    </div>
+    <div class="what-card">
+      <h3>Verificada</h3>
+      <p>Todos los reportes pasan por validación con evidencia documentada antes de publicarse.</p>
+    </div>
+    <div class="what-card">
+      <h3>Inmediata</h3>
+      <p>Consulta desde tu celular en segundos. Antes de prestar, sabes si la persona ya falló a otro miembro.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits">
+  <div class="benefits-inner">
+    <p class="section-tag" style="color: #e74c3c;">POR QUÉ USARLO</p>
+    <h2>Lo que evitas.</h2>
+    <p class="section-subtitle">Cada beneficio es un dolor de cabeza menos.</p>
+
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">💸</div>
+        <h3>Pérdidas económicas</h3>
+        <p>Identifica a personas con historial de no pago antes de prestarles. Tu dinero permanece donde debe.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">⚖️</div>
+        <h3>Pleitos legales</h3>
+        <p>Evita iniciar procesos de cobro con personas que ya tienen antecedentes de incumplimiento.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">😤</div>
+        <h3>Estrés y desgaste</h3>
+        <p>No más semanas persiguiendo a alguien que nunca tuvo intención de pagar.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">⏱️</div>
+        <h3>Tiempo perdido</h3>
+        <p>Cada minuto que no inviertes en un mal cliente, es tiempo que inviertes en uno bueno.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STEPS -->
+<section class="steps-section">
+  <div class="steps-inner">
+    <p class="section-tag">CÓMO EMPEZAR</p>
+    <h2>Primeros pasos.</h2>
+    <p class="section-subtitle">De la descarga al primer reporte en menos de 10 minutos.</p>
+
+    <div class="step">
+      <div class="step-number">01</div>
+      <div class="step-content">
+        <h3>Regístrate</h3>
+        <p>Descarga BlindaCredit y toca <strong>"Registrarme"</strong>. Llena tu nombre, número de teléfono, CURP, compañía y crea una contraseña de 6 caracteres.</p>
+        <div class="step-tip">
+          <p><strong>Tip:</strong> Usa el mismo número de teléfono que usas habitualmente. Tu cuenta queda vinculada a tu dispositivo automáticamente.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-number">02</div>
+      <div class="step-content">
+        <h3>Espera la aprobación</h3>
+        <p>El administrador revisa tu solicitud y la aprueba. Recibirás una notificación cuando esté lista. Si te falta algún dato, podrás corregirlo y reenviar sin volver a llenar todo.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-number">03</div>
+      <div class="step-content">
+        <h3>Elige tu plan</h3>
+        <p>Selecciona el plan que mejor se ajuste a tu volumen de operación. Realiza el pago por transferencia o CoDi y sube el comprobante desde la app.</p>
+        <div class="step-tip">
+          <p><strong>Tip:</strong> El plan Básico es ideal si solo necesitas consultar. Si reportas frecuentemente, considera Estándar o Premium.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-number">04</div>
+      <div class="step-content">
+        <h3>Activación inmediata</h3>
+        <p>Una vez que el administrador valida tu pago, recibirás una notificación y podrás comenzar a consultar y reportar inmediatamente.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW TO USE - SEARCH -->
+<section style="background: #ffffff;">
+  <p class="section-tag">FUNCIONALIDAD PRINCIPAL</p>
+  <h2>Consulta antes de prestar.</h2>
+  <p class="section-subtitle">La búsqueda más importante que harás hoy.</p>
+
+  <div class="mockup-row">
+    <div class="mockup-text">
+      <h3>Busca por CURP en segundos.</h3>
+      <p>Ingresa la CURP de 18 caracteres de la persona que solicita el crédito y toca <strong>"Buscar"</strong>.</p>
+      <p>Si la persona tiene reportes, verás todos los detalles: monto, fecha del crédito, periodo sin pago, institución y evidencias documentadas.</p>
+      <p>Si no aparece, perfecto — sigue tu proceso normal con más tranquilidad.</p>
+    </div>
+    <div class="phone-frame">
+      <div class="phone-screen">
+        <div style="font-size: 14px; font-weight: 600; color: #0A2463; margin-bottom: 4px;">Bienvenid@ de nuevo</div>
+        <div style="font-size: 16px; font-weight: 700; color: #0A2463; margin-bottom: 12px;">Juan Pérez</div>
+        <div style="background: #0A2463; color: #F5A623; font-size: 10px; padding: 4px 10px; border-radius: 6px; display: inline-block; margin-bottom: 14px;">Plan: Estándar</div>
+        <div style="background: #fff; border-radius: 10px; padding: 12px; margin-bottom: 12px; border: 1px solid #dde3f0;">
+          <div style="font-size: 12px; color: #666;">CURP a consultar</div>
+          <div style="font-size: 13px; color: #111; margin-top: 2px;">PEGJ850615HDFXYZ09</div>
+        </div>
+        <div style="background: #0A2463; color: #fff; padding: 10px; border-radius: 10px; text-align: center; font-size: 14px; font-weight: 600; margin-bottom: 16px;">Buscar</div>
+        <div style="background: #fff; border-radius: 12px; padding: 14px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+            <div style="font-size: 14px; font-weight: 700; color: #0A2463;">Juan Pérez</div>
+            <div style="background: #E63946; color: #fff; padding: 2px 8px; border-radius: 12px; font-size: 9px; font-weight: 600;">2 reportes</div>
+          </div>
+          <div style="font-size: 10px; color: #666;">CURP: PEGJ850615HDFXYZ09</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW TO USE - REPORT -->
+<section style="background: #fbfbfd;">
+  <p class="section-tag">REPORTAR PAGANTES</p>
+  <h2>Protege a toda la red.</h2>
+  <p class="section-subtitle">Cuando alguien te quede mal, repórtalo y evita que afecte a otros.</p>
+
+  <div class="mockup-row">
+    <div class="mockup-text">
+      <h3>Un reporte que protege a todos.</h3>
+      <p>Llena los datos del moroso: nombre, CURP, monto original, fecha del crédito, periodo sin pago e institución.</p>
+      <p>Adjunta hasta <strong>4 evidencias</strong>: foto del INE, contrato firmado, capturas de conversación, fotografía del moroso o cualquier documento que respalde el reporte.</p>
+      <p>El administrador revisa la evidencia y aprueba el reporte. A partir de ahí, todos los miembros de la red quedan protegidos.</p>
+    </div>
+    <div class="phone-frame">
+      <div class="phone-screen" style="padding: 16px;">
+        <div style="font-size: 14px; font-weight: 700; color: #0A2463; margin-bottom: 14px;">Reportar pagante</div>
+        <div style="background: #fff; border-radius: 8px; padding: 10px; margin-bottom: 8px; border: 1px solid #dde3f0;">
+          <div style="font-size: 10px; color: #666;">Nombre completo</div>
+          <div style="font-size: 12px; color: #111; margin-top: 2px;">María García</div>
+        </div>
+        <div style="background: #fff; border-radius: 8px; padding: 10px; margin-bottom: 8px; border: 1px solid #dde3f0;">
+          <div style="font-size: 10px; color: #666;">CURP</div>
+          <div style="font-size: 12px; color: #111; margin-top: 2px;">GAMA900312MDFXYZ05</div>
+        </div>
+        <div style="background: #fff; border-radius: 8px; padding: 10px; margin-bottom: 12px; border: 1px solid #dde3f0;">
+          <div style="font-size: 10px; color: #666;">Monto original</div>
+          <div style="font-size: 12px; color: #111; margin-top: 2px;">$8,000 MXN</div>
+        </div>
+        <div style="background: #f0f4ff; border-radius: 8px; padding: 10px; margin-bottom: 12px;">
+          <div style="font-size: 10px; font-weight: 600; color: #0A2463; margin-bottom: 6px;">Evidencias (3/4)</div>
+          <div style="display: flex; gap: 4px;">
+            <div style="width: 32px; height: 32px; background: #c8d4f0; border-radius: 4px;"></div>
+            <div style="width: 32px; height: 32px; background: #c8d4f0; border-radius: 4px;"></div>
+            <div style="width: 32px; height: 32px; background: #c8d4f0; border-radius: 4px;"></div>
+            <div style="width: 32px; height: 32px; background: #fff; border: 1px dashed #dde3f0; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 14px; color: #999;">+</div>
+          </div>
+        </div>
+        <div style="background: #E63946; color: #fff; padding: 10px; border-radius: 8px; text-align: center; font-size: 13px; font-weight: 600;">Enviar reporte</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLANS -->
+<section class="plans-section">
+  <p class="section-tag">PLANES Y PRECIOS</p>
+  <h2>Elige tu plan.</h2>
+  <p class="section-subtitle">Sin compromiso anual. Cambias o cancelas cuando quieras.</p>
+
+  <div class="plans-grid">
+    <div class="plan-card">
+      <div class="plan-name">Básico</div>
+      <div class="plan-price">$100<span> MXN</span></div>
+      <div class="plan-period">al mes</div>
+      <ul class="plan-features">
+        <li><span class="check">✓</span> Consultas ilimitadas</li>
+        <li><span class="cross">✗</span> Sin reportes</li>
+        <li><span class="check">✓</span> Acceso completo a la red</li>
+        <li><span class="check">✓</span> Soporte por chat</li>
+      </ul>
+    </div>
+
+    <div class="plan-card featured">
+      <div class="plan-badge">Recomendado</div>
+      <div class="plan-name">Estándar</div>
+      <div class="plan-price">$200<span> MXN</span></div>
+      <div class="plan-period">al mes</div>
+      <ul class="plan-features">
+        <li><span class="check">✓</span> Consultas ilimitadas</li>
+        <li><span class="check">✓</span> 3 reportes al mes</li>
+        <li><span class="check">✓</span> Acceso completo a la red</li>
+        <li><span class="check">✓</span> Soporte prioritario</li>
+      </ul>
+    </div>
+
+    <div class="plan-card">
+      <div class="plan-name">Premium</div>
+      <div class="plan-price">$300<span> MXN</span></div>
+      <div class="plan-period">al mes</div>
+      <ul class="plan-features">
+        <li><span class="check">✓</span> Consultas ilimitadas</li>
+        <li><span class="check">✓</span> Reportes ilimitados</li>
+        <li><span class="check">✓</span> Acceso completo a la red</li>
+        <li><span class="check">✓</span> Soporte prioritario</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="warning-block">
+    <h3>Una cuenta, un dispositivo.</h3>
+    <p>Por seguridad, tu cuenta queda vinculada al teléfono donde te registraste. <strong>No compartas tus credenciales</strong> — si intentas entrar desde otro dispositivo serás bloqueado automáticamente.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <p class="section-tag">PREGUNTAS FRECUENTES</p>
+  <h2>Dudas comunes.</h2>
+  <p class="section-subtitle">Lo que probablemente quieres saber.</p>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      <span>¿Cómo cambio de plan si necesito reportar más?</span>
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">Entra a la sección "Mi membresía" en la app. Selecciona el plan superior y se calculará la diferencia a pagar. Sube tu comprobante y al validarlo, tu nuevo plan se activa inmediatamente con un nuevo periodo de 30 días.</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      <span>¿Qué pasa si olvido mi contraseña?</span>
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">Contacta al administrador directamente. Él puede consultar tus datos y proporcionarte una nueva contraseña, o ayudarte a recuperar el acceso a tu cuenta.</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      <span>¿Cuánto tarda en aprobarse mi alta?</span>
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">Generalmente entre algunas horas y 24 hrs. Una vez aprobado recibirás una notificación inmediata en la app.</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      <span>¿Puedo retirar un reporte que envié?</span>
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">Sí, mientras esté pendiente de aprobación puedes editarlo o cancelarlo desde "Mis reportes". Una vez aprobado, deberás solicitar la baja al administrador con un motivo justificado.</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      <span>¿Es seguro subir documentos de mis clientes?</span>
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">Sí. Toda la información está cifrada y solo es visible para miembros aprobados de la red. Los documentos se almacenan en servidores seguros con políticas de acceso estrictas.</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      <span>¿Qué hago si soy víctima de un reporte injusto?</span>
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">Si descubres que alguien fue reportado por error, puedes solicitar la baja del registro directamente desde la app con un motivo. El administrador revisará tu solicitud y tomará una decisión.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="logo-small">
+    <svg width="28" height="28" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <path d="M50 18 L78 30 L78 56 Q78 76 50 84 Q22 76 22 56 L22 30 Z" fill="#16213e" stroke="#e74c3c" stroke-width="2"/>
+      <rect x="40" y="54" width="20" height="14" rx="3" fill="#e74c3c"/>
+      <path d="M43 54 Q43 45 50 45 Q57 45 57 54" fill="none" stroke="#e74c3c" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>
+  </div>
+  <p class="brand">BlindaCredit</p>
+  <p>La red privada de protección crediticia.</p>
+  <p style="margin-top: 16px; font-size: 12px;">© 2026 BlindaCredit. Manual del distribuidor.</p>
+</footer>
+
+<script>
+  function toggleFaq(q) {
+    const item = q.parentElement;
+    const wasActive = item.classList.contains('active');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+    if (!wasActive) item.classList.add('active');
+  }
+  document.querySelectorAll('.faq-question').forEach(q => {
+    q.addEventListener('click', () => toggleFaq(q));
+  });
+</script>
+
+</body>
+</html>

@@ -199,6 +199,114 @@
     line-height: 1.5;
   }
 
+  /* PAGOS */
+  .pago-section { background: #ffffff; }
+  .pago-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 40px;
+  }
+  .pago-card {
+    background: #fbfbfd;
+    border-radius: 20px;
+    padding: 32px 28px;
+    display: flex;
+    flex-direction: column;
+  }
+  .pago-icon {
+    width: 52px; height: 52px;
+    border-radius: 14px;
+    background: #1a1a2e;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 20px;
+    font-size: 24px; color: #fff;
+  }
+  .pago-card h3 {
+    font-size: 20px; font-weight: 600;
+    letter-spacing: -0.01em; margin-bottom: 16px;
+  }
+  .pago-dato {
+    margin-bottom: 14px;
+  }
+  .pago-label {
+    font-size: 12px; color: #86868b;
+    font-weight: 500; text-transform: uppercase;
+    letter-spacing: 0.04em; margin-bottom: 4px;
+  }
+  .pago-valor {
+    font-size: 17px; color: #1d1d1f;
+    font-weight: 600; letter-spacing: 0.02em;
+    word-break: break-word;
+  }
+  .pago-clabe-row {
+    display: flex; align-items: center; gap: 10px;
+    background: #ffffff; border: 1px solid #d2d2d7;
+    border-radius: 12px; padding: 12px 14px;
+    margin-bottom: 14px;
+  }
+  .pago-clabe-num {
+    flex: 1; font-size: 17px; font-weight: 600;
+    color: #1d1d1f; letter-spacing: 0.03em;
+    font-variant-numeric: tabular-nums;
+  }
+  .copy-btn {
+    background: #1a1a2e; color: #fff;
+    border: none; border-radius: 8px;
+    padding: 8px 14px; font-size: 13px;
+    font-weight: 600; cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s ease;
+    font-family: inherit;
+  }
+  .copy-btn:hover { background: #2a2a44; }
+  .copy-btn.copied { background: #34c759; }
+  .tiendas-list {
+    display: flex; flex-wrap: wrap; gap: 6px;
+    margin-bottom: 16px;
+  }
+  .tienda-chip {
+    background: #fff; border: 1px solid #d2d2d7;
+    border-radius: 8px; padding: 5px 12px;
+    font-size: 13px; color: #515154; font-weight: 500;
+  }
+  .pago-instrucciones {
+    list-style: none; padding: 0; margin-top: auto;
+  }
+  .pago-instrucciones li {
+    font-size: 14px; color: #515154;
+    line-height: 1.5; padding: 6px 0 6px 24px;
+    position: relative;
+  }
+  .pago-instrucciones li::before {
+    content: "✓"; position: absolute; left: 0;
+    color: #34c759; font-weight: bold;
+  }
+  .wa-btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: #25D366; color: #fff;
+    padding: 14px 24px; border-radius: 12px;
+    font-size: 15px; font-weight: 600;
+    text-decoration: none; margin-top: 8px;
+    transition: transform 0.2s ease;
+  }
+  .wa-btn:hover { transform: translateY(-2px); }
+  .wa-btn svg { width: 22px; height: 22px; }
+  .pago-importante {
+    max-width: 720px; margin: 40px auto 0;
+    background: #fff8e6; border: 1px solid #ffe082;
+    border-radius: 16px; padding: 24px;
+    text-align: center;
+  }
+  .pago-importante h4 {
+    font-size: 15px; font-weight: 600;
+    color: #b07400; margin-bottom: 8px;
+  }
+  .pago-importante p {
+    font-size: 14px; color: #856404; line-height: 1.6;
+  }
+  .pago-importante strong { color: #6b4e00; }
+
   /* HOW TO INSTALL */
   .install-section {
     background: #fbfbfd;
@@ -229,6 +337,103 @@
     line-height: 1.6;
   }
   .install-step strong { color: #1d1d1f; font-weight: 600; }
+
+  /* APRENDE */
+  .aprende-section { background: #ffffff; }
+  .videos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 40px;
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .video-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .video-frame {
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 16px 50px rgba(26,26,46,0.18);
+    background: #000;
+  }
+  .video-frame iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+  }
+  .video-title {
+    font-size: 17px;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-top: 16px;
+    text-align: center;
+    letter-spacing: -0.01em;
+  }
+  .manuales-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 56px;
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .manual-card {
+    background: #fbfbfd;
+    border-radius: 18px;
+    padding: 32px 28px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+  }
+  .manual-card:hover { transform: translateY(-4px); }
+  .manual-icon {
+    width: 60px; height: 60px;
+    border-radius: 16px;
+    background: #1a1a2e;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 18px;
+    font-size: 28px;
+  }
+  .manual-card h3 {
+    font-size: 19px; font-weight: 600;
+    letter-spacing: -0.01em; margin-bottom: 8px;
+  }
+  .manual-card p {
+    font-size: 14px; color: #515154;
+    line-height: 1.5; margin-bottom: 20px;
+    flex: 1;
+  }
+  .manual-btns {
+    display: flex; gap: 10px; width: 100%;
+  }
+  .manual-btn {
+    flex: 1;
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  .manual-btn.primary {
+    background: #1a1a2e; color: #fff;
+  }
+  .manual-btn.primary:hover { background: #2a2a44; }
+  .manual-btn.secondary {
+    background: #ffffff; color: #1a1a2e;
+    border: 1px solid #d2d2d7;
+  }
+  .manual-btn.secondary:hover { border-color: #1a1a2e; }
 
   /* DOWNLOAD BAND */
   .download-band {
@@ -308,6 +513,9 @@
     .features-grid { grid-template-columns: 1fr; }
     .plans-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
     .plan-card.featured { transform: none; }
+    .pago-grid { grid-template-columns: 1fr; }
+    .videos-grid { grid-template-columns: 1fr; max-width: 320px; }
+    .manuales-grid { grid-template-columns: 1fr; }
     .install-step { grid-template-columns: 50px 1fr; gap: 16px; padding: 20px 0; }
     .install-num { font-size: 36px; }
     .install-step h3 { font-size: 18px; }
@@ -419,6 +627,83 @@
   </div>
 </section>
 
+<!-- PAGOS -->
+<section class="pago-section">
+  <p class="section-tag">CÓMO PAGAR</p>
+  <h2>Realiza tu pago.</h2>
+  <p class="section-subtitle">Elige la forma que más te convenga. Una vez que pagues, sube tu comprobante desde la app y el administrador validará tu membresía.</p>
+
+  <div class="pago-grid">
+
+    <!-- Card 1: Transferencia -->
+    <div class="pago-card">
+      <div class="pago-icon">🏦</div>
+      <h3>Transferencia bancaria</h3>
+      <div class="pago-label">CLABE interbancaria</div>
+      <div class="pago-clabe-row">
+        <span class="pago-clabe-num" id="clabe">6381 8001 0091 2649 04</span>
+        <button class="copy-btn" onclick="copiar('clabe', this)">Copiar</button>
+      </div>
+      <div class="pago-dato">
+        <div class="pago-label">Beneficiario</div>
+        <div class="pago-valor">BlindaCredit</div>
+      </div>
+      <div class="pago-dato">
+        <div class="pago-label">Concepto</div>
+        <div class="pago-valor">Tu nombre como está en BlindaCredit</div>
+      </div>
+    </div>
+
+    <!-- Card 2: Depósito en tienda -->
+    <div class="pago-card">
+      <div class="pago-icon">🏪</div>
+      <h3>Depósito en tienda</h3>
+      <div class="pago-label">Número de tarjeta</div>
+      <div class="pago-clabe-row">
+        <span class="pago-clabe-num" id="tarjeta">5101 2575 8756 6859</span>
+        <button class="copy-btn" onclick="copiar('tarjeta', this)">Copiar</button>
+      </div>
+      <div class="pago-label">Tiendas disponibles</div>
+      <div class="tiendas-list">
+        <span class="tienda-chip">OXXO</span>
+        <span class="tienda-chip">Soriana</span>
+        <span class="tienda-chip">Kiosko</span>
+        <span class="tienda-chip">Chedraui</span>
+        <span class="tienda-chip">Farmacias del Ahorro</span>
+        <span class="tienda-chip">Waldos</span>
+      </div>
+      <div class="pago-label">Instrucciones</div>
+      <ul class="pago-instrucciones">
+        <li>Di que es un depósito con Nu</li>
+        <li>Si no aparece Nu, menciona que es para PESpay</li>
+        <li>Menciona o muestra el número de tarjeta</li>
+        <li>Paga en efectivo</li>
+      </ul>
+    </div>
+
+    <!-- Card 3: Comprobante -->
+    <div class="pago-card">
+      <div class="pago-icon">📤</div>
+      <h3>¿Ya pagaste?</h3>
+      <p style="font-size: 15px; color: #515154; line-height: 1.6; margin-bottom: 20px;">
+        Sube tu comprobante directamente desde la app en la sección de membresía. El administrador validará tu pago y tu membresía quedará activa.
+      </p>
+      <ul class="pago-instrucciones">
+        <li>Abre BlindaCredit</li>
+        <li>Ve a "Mi membresía"</li>
+        <li>Sube la foto del comprobante</li>
+        <li>Espera la validación del administrador</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="pago-importante">
+    <h4>⚠️ Importante</h4>
+    <p>Al pagar, usa siempre como concepto <strong>tu nombre tal como está registrado en BlindaCredit</strong>. Esto nos ayuda a identificar tu pago y validar tu membresía más rápido.</p>
+  </div>
+</section>
+
 <!-- HOW TO INSTALL -->
 <section class="install-section">
   <div class="install-inner">
@@ -465,6 +750,49 @@
   </div>
 </section>
 
+<!-- APRENDE A USAR -->
+<section class="aprende-section">
+  <p class="section-tag">RECURSOS</p>
+  <h2>Aprende a usar BlindaCredit</h2>
+  <p class="section-subtitle">Mira nuestros videos y consulta las guías para sacarle el máximo provecho a la app.</p>
+
+  <div class="videos-grid">
+    <div class="video-card">
+      <div class="video-frame">
+        <iframe src="https://www.youtube.com/embed/MtZd2yiowqA" title="¿Qué es BlindaCredit?" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="video-title">¿Qué es BlindaCredit?</div>
+    </div>
+    <div class="video-card">
+      <div class="video-frame">
+        <iframe src="https://www.youtube.com/embed/CNJJ4SB-Fic" title="Protege tus ganancias" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="video-title">Protege tus ganancias</div>
+    </div>
+  </div>
+
+  <div class="manuales-grid">
+    <div class="manual-card">
+      <div class="manual-icon">📘</div>
+      <h3>Guía de registro</h3>
+      <p>Aprende a crear tu cuenta paso a paso, desde la descarga hasta tu primera consulta.</p>
+      <div class="manual-btns">
+        <a href="blindacredit-guia-registro.html" class="manual-btn primary" target="_blank">Ver en línea</a>
+        <a href="blindacredit-guia-registro.pdf" class="manual-btn secondary" target="_blank">Descargar PDF</a>
+      </div>
+    </div>
+    <div class="manual-card">
+      <div class="manual-icon">📕</div>
+      <h3>Manual del distribuidor</h3>
+      <p>Todo lo que necesitas saber: funciones, planes, consultas, reportes y más.</p>
+      <div class="manual-btns">
+        <a href="blindacredit-manual-distribuidor.html" class="manual-btn primary" target="_blank">Ver en línea</a>
+        <a href="blindacredit-manual-distribuidor.pdf" class="manual-btn secondary" target="_blank">Descargar PDF</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- DOWNLOAD BAND -->
 <section class="download-band">
   <h2>¿Listo para blindarte?</h2>
@@ -488,6 +816,21 @@
   <p>La red privada de protección crediticia</p>
   <p class="copyright">© 2026 BlindaCredit. Todos los derechos reservados.</p>
 </footer>
+
+<script>
+  function copiar(id, btn) {
+    const texto = document.getElementById(id).innerText.replace(/\s/g, '');
+    navigator.clipboard.writeText(texto).then(() => {
+      const original = btn.innerText;
+      btn.innerText = '¡Copiado!';
+      btn.classList.add('copied');
+      setTimeout(() => {
+        btn.innerText = original;
+        btn.classList.remove('copied');
+      }, 2000);
+    });
+  }
+</script>
 
 </body>
 </html>
