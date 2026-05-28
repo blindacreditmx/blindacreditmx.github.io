@@ -293,15 +293,15 @@
 
   .plans-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
     margin-top: 48px;
   }
 
   .plan-card {
     background: #fbfbfd;
-    border-radius: 22px;
-    padding: 40px 32px;
+    border-radius: 20px;
+    padding: 32px 22px;
     text-align: center;
     border: 2px solid transparent;
     transition: all 0.3s ease;
@@ -310,7 +310,7 @@
   .plan-card.featured {
     background: #1a1a2e;
     color: #f5f5f7;
-    transform: scale(1.05);
+    transform: scale(1.03);
   }
 
   .plan-card.featured .plan-name { color: #e74c3c; }
@@ -340,7 +340,7 @@
   }
 
   .plan-price {
-    font-size: 48px;
+    font-size: 38px;
     font-weight: 700;
     letter-spacing: -0.025em;
     line-height: 1;
@@ -348,14 +348,14 @@
   }
 
   .plan-price span {
-    font-size: 16px;
+    font-size: 14px;
     color: #86868b;
     font-weight: 400;
     letter-spacing: 0;
   }
 
   .plan-period {
-    font-size: 13px;
+    font-size: 12px;
     color: #86868b;
     margin-bottom: 24px;
   }
@@ -504,7 +504,7 @@
     .step-content p { font-size: 15px; }
     .mockup-row { grid-template-columns: 1fr; }
     .mockup-text h3 { font-size: 26px; }
-    .plans-grid { grid-template-columns: 1fr; }
+    .plans-grid { grid-template-columns: 1fr 1fr; }
     .plan-card.featured { transform: none; }
     section { padding: 64px 20px; }
     .benefits, .steps-section, .plans-section, .faq-section { padding: 64px 20px; }
@@ -614,10 +614,10 @@
     <div class="step">
       <div class="step-number">03</div>
       <div class="step-content">
-        <h3>Elige tu plan</h3>
-        <p>Selecciona el plan que mejor se ajuste a tu volumen de operación. Realiza el pago por transferencia o CoDi y sube el comprobante desde la app.</p>
+        <h3>Elige tu periodicidad</h3>
+        <p>Selecciona el Plan Distribuidor con la periodicidad que mejor se ajuste a tu flujo: mensual, trimestral, semestral o anual. Todas incluyen consultas y reportes ilimitados. Realiza el pago por transferencia o depósito y sube el comprobante desde la app.</p>
         <div class="step-tip">
-          <p><strong>Tip:</strong> El plan Básico es ideal si solo necesitas consultar. Si reportas frecuentemente, considera Estándar o Premium.</p>
+          <p><strong>Tip:</strong> Entre más larga la periodicidad que elijas, mayor es tu ahorro. El plan Anual te ahorra $289 al año.</p>
         </div>
       </div>
     </div>
@@ -649,7 +649,7 @@
       <div class="phone-screen">
         <div style="font-size: 14px; font-weight: 600; color: #0A2463; margin-bottom: 4px;">Bienvenid@ de nuevo</div>
         <div style="font-size: 16px; font-weight: 700; color: #0A2463; margin-bottom: 12px;">Juan Pérez</div>
-        <div style="background: #0A2463; color: #F5A623; font-size: 10px; padding: 4px 10px; border-radius: 6px; display: inline-block; margin-bottom: 14px;">Plan: Estándar</div>
+        <div style="background: #0A2463; color: #F5A623; font-size: 10px; padding: 4px 10px; border-radius: 6px; display: inline-block; margin-bottom: 14px;">Plan Distribuidor</div>
         <div style="background: #fff; border-radius: 10px; padding: 12px; margin-bottom: 12px; border: 1px solid #dde3f0;">
           <div style="font-size: 12px; color: #666;">CURP a consultar</div>
           <div style="font-size: 13px; color: #111; margin-top: 2px;">PEGJ850615HDFXYZ09</div>
@@ -712,40 +712,52 @@
 
 <!-- PLANS -->
 <section class="plans-section">
-  <p class="section-tag">PLANES Y PRECIOS</p>
-  <h2>Elige tu plan.</h2>
-  <p class="section-subtitle">Sin compromiso anual. Cambias o cancelas cuando quieras.</p>
+  <p class="section-tag">PLAN ÚNICO · TODO INCLUIDO</p>
+  <h2>Elige cómo pagar.</h2>
+  <p class="section-subtitle">Un solo plan con todas las funciones. Tú decides la periodicidad. A mayor periodo, mayor ahorro.</p>
 
   <div class="plans-grid">
     <div class="plan-card">
-      <div class="plan-name">Básico</div>
-      <div class="plan-price">$100<span> MXN</span></div>
-      <div class="plan-period">al mes</div>
+      <div class="plan-name">Mensual</div>
+      <div class="plan-price">$99<span> MXN</span></div>
+      <div class="plan-period">cada mes</div>
       <ul class="plan-features">
         <li><span class="check">✓</span> Consultas ilimitadas</li>
-        <li><span class="cross">✗</span> Sin reportes</li>
-        <li><span class="check">✓</span> Acceso completo a la red</li>
-        <li><span class="check">✓</span> Soporte por chat</li>
-      </ul>
-    </div>
-
-    <div class="plan-card featured">
-      <div class="plan-badge">Recomendado</div>
-      <div class="plan-name">Estándar</div>
-      <div class="plan-price">$200<span> MXN</span></div>
-      <div class="plan-period">al mes</div>
-      <ul class="plan-features">
-        <li><span class="check">✓</span> Consultas ilimitadas</li>
-        <li><span class="check">✓</span> 3 reportes al mes</li>
+        <li><span class="check">✓</span> Reportes ilimitados</li>
         <li><span class="check">✓</span> Acceso completo a la red</li>
         <li><span class="check">✓</span> Soporte prioritario</li>
       </ul>
     </div>
 
     <div class="plan-card">
-      <div class="plan-name">Premium</div>
-      <div class="plan-price">$300<span> MXN</span></div>
-      <div class="plan-period">al mes</div>
+      <div class="plan-name">Trimestral</div>
+      <div class="plan-price">$249<span> MXN</span></div>
+      <div class="plan-period">cada 3 meses · ahorra $48</div>
+      <ul class="plan-features">
+        <li><span class="check">✓</span> Consultas ilimitadas</li>
+        <li><span class="check">✓</span> Reportes ilimitados</li>
+        <li><span class="check">✓</span> Acceso completo a la red</li>
+        <li><span class="check">✓</span> Soporte prioritario</li>
+      </ul>
+    </div>
+
+    <div class="plan-card">
+      <div class="plan-name">Semestral</div>
+      <div class="plan-price">$469<span> MXN</span></div>
+      <div class="plan-period">cada 6 meses · ahorra $125</div>
+      <ul class="plan-features">
+        <li><span class="check">✓</span> Consultas ilimitadas</li>
+        <li><span class="check">✓</span> Reportes ilimitados</li>
+        <li><span class="check">✓</span> Acceso completo a la red</li>
+        <li><span class="check">✓</span> Soporte prioritario</li>
+      </ul>
+    </div>
+
+    <div class="plan-card featured">
+      <div class="plan-badge">Más popular</div>
+      <div class="plan-name">Anual</div>
+      <div class="plan-price">$899<span> MXN</span></div>
+      <div class="plan-period">cada 12 meses · ahorra $289</div>
       <ul class="plan-features">
         <li><span class="check">✓</span> Consultas ilimitadas</li>
         <li><span class="check">✓</span> Reportes ilimitados</li>
@@ -769,11 +781,11 @@
 
   <div class="faq-item">
     <div class="faq-question">
-      <span>¿Cómo cambio de plan si necesito reportar más?</span>
+      <span>¿Puedo cambiar de periodicidad al renovar?</span>
       <span class="faq-icon">+</span>
     </div>
     <div class="faq-answer">
-      <div class="faq-answer-inner">Entra a la sección "Mi membresía" en la app. Selecciona el plan superior y se calculará la diferencia a pagar. Sube tu comprobante y al validarlo, tu nuevo plan se activa inmediatamente con un nuevo periodo de 30 días.</div>
+      <div class="faq-answer-inner">Sí. Todos los planes incluyen consultas y reportes ilimitados, solo cambia la periodicidad de pago. Al renovar tu membresía puedes elegir la opción que más te convenga: mensual, trimestral, semestral o anual. A mayor periodo, mayor ahorro.</div>
     </div>
   </div>
 
