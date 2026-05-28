@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BlindaCredit — Descarga la app</title>
+<meta name="description" content="La red privada de protección crediticia para distribuidores y prestamistas. Descarga BlindaCredit hoy.">
+<meta property="og:title" content="BlindaCredit">
+<meta property="og:description" content="La red privada que protege tu trabajo y tus ganancias.">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", system-ui, sans-serif;
+    color: #1d1d1f;
+    background: #ffffff;
+    line-height: 1.5;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+    color: #f5f5f7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 24px;
+    text-align: center;
+    position: relative;
+  }
+  .hero-logo {
+    width: 100px; height: 100px;
+    border-radius: 26px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 32px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  }
+  .hero h1 {
+    font-size: 64px; font-weight: 700;
+    letter-spacing: -0.025em; margin-bottom: 16px;
+    color: #ffffff;
+  }
+  .hero-tagline {
+    font-size: 22px; color: #a1a1a6;
+    font-weight: 400; max-width: 540px;
+    margin: 0 auto 48px; letter-spacing: -0.01em;
+  }
+  .download-btn {
+    display: inline-flex; align-items: center; gap: 12px;
+    background: #ffffff; color: #1a1a2e;
+    padding: 18px 36px; border-radius: 14px;
+    font-size: 17px; font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 10px 40px rgba(255,255,255,0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .download-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 50px rgba(255,255,255,0.25);
+  }
+  .download-btn svg { width: 24px; height: 24px; }
+  .download-hint {
+    margin-top: 16px; font-size: 13px; color: #86868b;
+  }
+  .scroll-down {
+    position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);
+    color: #86868b; font-size: 12px; letter-spacing: 0.1em;
+    text-transform: uppercase; opacity: 0.7;
+  }
+
+  /* SECTIONS */
+  section {
+    padding: 100px 24px;
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+  .section-tag {
+    color: #e74c3c; font-size: 13px; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    margin-bottom: 16px; text-align: center;
+  }
+  h2 {
+    font-size: 48px; font-weight: 700;
+    letter-spacing: -0.025em; line-height: 1.1;
+    text-align: center; margin-bottom: 24px;
+  }
+  .section-subtitle {
+    font-size: 21px; color: #86868b;
+    max-width: 680px; margin: 0 auto 56px;
+    text-align: center; letter-spacing: -0.01em;
+  }
+
+  /* FEATURES */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .feature-card {
+    background: #fbfbfd;
+    border-radius: 20px;
+    padding: 36px 28px;
+    transition: transform 0.3s ease;
+  }
+  .feature-card:hover { transform: translateY(-4px); }
+  .feature-icon {
+    width: 52px; height: 52px;
+    border-radius: 14px;
+    background: #1a1a2e;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 20px;
+    font-size: 24px; color: #fff;
+  }
+  .feature-card h3 {
+    font-size: 20px; font-weight: 600;
+    letter-spacing: -0.01em; margin-bottom: 8px;
+  }
+  .feature-card p {
+    font-size: 15px; color: #515154;
+    line-height: 1.55;
+  }
+
+  /* PLAN */
+  .plan-section {
+    background: #1a1a2e;
+    color: #f5f5f7;
+    max-width: none; margin: 0;
+    padding: 100px 24px;
+  }
+  .plan-inner { max-width: 1080px; margin: 0 auto; }
+  .plan-section h2 { color: #f5f5f7; }
+  .plan-section .section-subtitle { color: #86868b; }
+
+  .plans-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 40px;
+  }
+  .plan-card {
+    background: #2a2a44;
+    border-radius: 18px;
+    padding: 28px 20px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  .plan-card.featured {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    transform: scale(1.05);
+  }
+  .plan-card.featured .plan-period { color: rgba(255,255,255,0.85); }
+  .badge-savings {
+    position: absolute; top: -10px; left: 50%;
+    transform: translateX(-50%);
+    background: #34c759; color: white;
+    font-size: 10px; font-weight: 700;
+    padding: 4px 12px; border-radius: 12px;
+    letter-spacing: 0.05em; text-transform: uppercase;
+  }
+  .plan-name {
+    font-size: 13px; font-weight: 600;
+    color: #e74c3c; letter-spacing: 0.05em;
+    text-transform: uppercase; margin-bottom: 12px;
+  }
+  .plan-card.featured .plan-name { color: #ffffff; }
+  .plan-price {
+    font-size: 36px; font-weight: 700;
+    letter-spacing: -0.025em; line-height: 1;
+    margin-bottom: 4px; color: #ffffff;
+  }
+  .plan-price span {
+    font-size: 14px; color: #86868b;
+    font-weight: 400; letter-spacing: 0;
+  }
+  .plan-card.featured .plan-price span { color: rgba(255,255,255,0.7); }
+  .plan-period { font-size: 12px; color: #86868b; }
+
+  .all-included {
+    margin-top: 40px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 14px;
+    padding: 24px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .all-included h4 {
+    font-size: 14px; color: #e74c3c;
+    font-weight: 600; letter-spacing: 0.05em;
+    text-transform: uppercase; margin-bottom: 8px;
+  }
+  .all-included p {
+    font-size: 16px; color: #d2d2d7;
+    line-height: 1.5;
+  }
+
+  /* HOW TO INSTALL */
+  .install-section {
+    background: #fbfbfd;
+    max-width: none; margin: 0;
+    padding: 100px 24px;
+  }
+  .install-inner { max-width: 880px; margin: 0 auto; }
+  .install-step {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    gap: 24px;
+    padding: 28px 0;
+    border-bottom: 1px solid #d2d2d7;
+    align-items: start;
+  }
+  .install-step:last-child { border-bottom: none; }
+  .install-num {
+    font-size: 48px; font-weight: 700;
+    color: #e74c3c; line-height: 1;
+    letter-spacing: -0.04em;
+  }
+  .install-step h3 {
+    font-size: 22px; font-weight: 700;
+    margin-bottom: 8px; letter-spacing: -0.02em;
+  }
+  .install-step p {
+    font-size: 15px; color: #515154;
+    line-height: 1.6;
+  }
+  .install-step strong { color: #1d1d1f; font-weight: 600; }
+
+  /* DOWNLOAD BAND */
+  .download-band {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    color: white;
+    text-align: center;
+    padding: 80px 24px;
+    margin: 0;
+    max-width: none;
+  }
+  .download-band h2 { color: white; }
+  .download-band p {
+    color: rgba(255,255,255,0.9);
+    font-size: 18px;
+    max-width: 540px;
+    margin: 16px auto 32px;
+  }
+  .download-band .download-btn {
+    background: #ffffff;
+    color: #c0392b;
+  }
+  .download-band .download-btn:hover {
+    box-shadow: 0 12px 50px rgba(0,0,0,0.2);
+  }
+
+  /* SECURITY NOTE */
+  .security-note {
+    max-width: 720px; margin: 60px auto 0;
+    background: #fbfbfd;
+    border-radius: 18px; padding: 28px;
+    border-left: 4px solid #1a1a2e;
+  }
+  .security-note h4 {
+    font-size: 16px; font-weight: 600;
+    margin-bottom: 8px; color: #1a1a2e;
+  }
+  .security-note p {
+    font-size: 14px; color: #515154;
+    line-height: 1.6;
+  }
+
+  /* FOOTER */
+  footer {
+    background: #0f0f1e;
+    color: #86868b;
+    text-align: center;
+    padding: 50px 24px;
+  }
+  footer .logo-small {
+    width: 48px; height: 48px;
+    background: #2a2a44;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center; justify-content: center;
+    margin-bottom: 16px;
+  }
+  footer .brand {
+    color: #f5f5f7;
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 4px;
+  }
+  footer p { font-size: 13px; line-height: 1.6; }
+  footer .copyright {
+    margin-top: 16px;
+    font-size: 11px;
+    opacity: 0.6;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 44px; }
+    .hero-tagline { font-size: 18px; }
+    .download-btn { padding: 16px 28px; font-size: 15px; }
+    h2 { font-size: 32px; }
+    .section-subtitle { font-size: 17px; }
+    .features-grid { grid-template-columns: 1fr; }
+    .plans-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .plan-card.featured { transform: none; }
+    .install-step { grid-template-columns: 50px 1fr; gap: 16px; padding: 20px 0; }
+    .install-num { font-size: 36px; }
+    .install-step h3 { font-size: 18px; }
+    section, .plan-section, .install-section, .download-band { padding: 64px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-logo">
+    <svg width="62" height="62" viewBox="0 0 100 100">
+      <path d="M50 18 L78 30 L78 56 Q78 76 50 84 Q22 76 22 56 L22 30 Z" fill="#16213e" stroke="#e74c3c" stroke-width="2"/>
+      <rect x="40" y="54" width="20" height="14" rx="3" fill="#e74c3c"/>
+      <path d="M43 54 Q43 45 50 45 Q57 45 57 54" fill="none" stroke="#e74c3c" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>
+  </div>
+  <h1>BlindaCredit</h1>
+  <p class="hero-tagline">La red privada que protege tu trabajo y tus ganancias.</p>
+  <a href="blindacredit.apk" class="download-btn" download>
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 16l-5-5h3V4h4v7h3l-5 5zm-7 4h14v-2H5v2z"/></svg>
+    Descargar para Android
+  </a>
+  <p class="download-hint">Disponible solo para Android · APK directo</p>
+  <p class="scroll-down">↓ Conoce más</p>
+</section>
+
+<!-- FEATURES -->
+<section>
+  <p class="section-tag">¿QUÉ ES BLINDACREDIT?</p>
+  <h2>Tu red de confianza.</h2>
+  <p class="section-subtitle">Una plataforma cerrada y exclusiva donde distribuidores y prestamistas comparten información sobre personas con historial de no pago. Antes de prestar, sabes con quién estás tratando.</p>
+
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon">🔒</div>
+      <h3>Privada</h3>
+      <p>Solo miembros aprobados acceden. No es pública ni está disponible en internet.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🚦</div>
+      <h3>Semáforo de riesgo</h3>
+      <p>Verde, amarillo o rojo. Sabes el nivel de riesgo de un cliente al instante.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">✅</div>
+      <h3>Verificada</h3>
+      <p>Cada reporte pasa por validación con evidencia documentada antes de publicarse.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">⚡</div>
+      <h3>Inmediata</h3>
+      <p>Consultas desde tu celular en segundos. Antes de prestar, sabes la realidad.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📊</div>
+      <h3>Contador de red</h3>
+      <p>Sabe cuántas veces la red ha consultado a un cliente. Patrón de búsqueda = riesgo.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">💬</div>
+      <h3>Comentarios</h3>
+      <p>Lee qué dijeron otros distribuidores sobre el cliente que estás evaluando.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PLANS -->
+<section class="plan-section">
+  <div class="plan-inner">
+    <p class="section-tag">PLAN ÚNICO · TODO INCLUIDO</p>
+    <h2>Elige cómo pagar.</h2>
+    <p class="section-subtitle">Un solo plan con todas las funciones. Tú decides la periodicidad que mejor te convenga. A mayor periodo, mayor ahorro.</p>
+
+    <div class="plans-grid">
+      <div class="plan-card">
+        <div class="plan-name">Mensual</div>
+        <div class="plan-price">$99<span> MXN</span></div>
+        <div class="plan-period">cada mes</div>
+      </div>
+
+      <div class="plan-card">
+        <div class="badge-savings">Ahorra $48</div>
+        <div class="plan-name">Trimestral</div>
+        <div class="plan-price">$249<span> MXN</span></div>
+        <div class="plan-period">cada 3 meses</div>
+      </div>
+
+      <div class="plan-card">
+        <div class="badge-savings">Ahorra $125</div>
+        <div class="plan-name">Semestral</div>
+        <div class="plan-price">$469<span> MXN</span></div>
+        <div class="plan-period">cada 6 meses</div>
+      </div>
+
+      <div class="plan-card featured">
+        <div class="badge-savings">Ahorra $289</div>
+        <div class="plan-name">Anual</div>
+        <div class="plan-price">$899<span> MXN</span></div>
+        <div class="plan-period">cada 12 meses</div>
+      </div>
+    </div>
+
+    <div class="all-included">
+      <h4>Todos los planes incluyen</h4>
+      <p>Consultas ilimitadas · Reportes ilimitados · Acceso completo a la red · Soporte prioritario</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW TO INSTALL -->
+<section class="install-section">
+  <div class="install-inner">
+    <p class="section-tag">CÓMO INSTALAR</p>
+    <h2>Listo en 3 minutos.</h2>
+    <p class="section-subtitle">Sigue estos pasos para tener BlindaCredit funcionando en tu Android.</p>
+
+    <div class="install-step">
+      <div class="install-num">01</div>
+      <div>
+        <h3>Habilita instalación de fuentes externas</h3>
+        <p>Ve a <strong>Ajustes → Seguridad</strong> (o <strong>Aplicaciones → Permisos especiales</strong>) y activa <strong>"Instalar aplicaciones de fuentes desconocidas"</strong>. Este paso es necesario porque BlindaCredit es una app privada, no está en Play Store.</p>
+      </div>
+    </div>
+
+    <div class="install-step">
+      <div class="install-num">02</div>
+      <div>
+        <h3>Descarga el APK</h3>
+        <p>Toca el botón <strong>"Descargar para Android"</strong> de esta página. Espera a que se complete la descarga del archivo APK.</p>
+      </div>
+    </div>
+
+    <div class="install-step">
+      <div class="install-num">03</div>
+      <div>
+        <h3>Instala la app</h3>
+        <p>Abre las notificaciones, toca el archivo descargado y presiona <strong>"Instalar"</strong>. Si tu teléfono muestra alguna advertencia, selecciona <strong>"Instalar de todos modos"</strong>.</p>
+      </div>
+    </div>
+
+    <div class="install-step">
+      <div class="install-num">04</div>
+      <div>
+        <h3>Regístrate</h3>
+        <p>Abre BlindaCredit y toca <strong>"Registrarme"</strong>. Llena tus datos: nombre, teléfono, CURP, compañía y crea tu contraseña. El administrador revisará tu solicitud y recibirás notificación al ser aprobado.</p>
+      </div>
+    </div>
+
+    <div class="security-note">
+      <h4>🔐 Una cuenta, un dispositivo</h4>
+      <p>Tu cuenta queda vinculada al teléfono donde te registres. No compartas tus credenciales — si intentas entrar desde otro dispositivo serás bloqueado automáticamente. Esta es una medida de seguridad para proteger la información de toda la red.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DOWNLOAD BAND -->
+<section class="download-band">
+  <h2>¿Listo para blindarte?</h2>
+  <p>Descarga BlindaCredit ahora y nunca más vuelvas a prestar a ciegas.</p>
+  <a href="blindacredit.apk" class="download-btn" download>
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 16l-5-5h3V4h4v7h3l-5 5zm-7 4h14v-2H5v2z"/></svg>
+    Descargar para Android
+  </a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="logo-small">
+    <svg width="28" height="28" viewBox="0 0 100 100">
+      <path d="M50 18 L78 30 L78 56 Q78 76 50 84 Q22 76 22 56 L22 30 Z" fill="#16213e" stroke="#e74c3c" stroke-width="2"/>
+      <rect x="40" y="54" width="20" height="14" rx="3" fill="#e74c3c"/>
+      <path d="M43 54 Q43 45 50 45 Q57 45 57 54" fill="none" stroke="#e74c3c" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>
+  </div>
+  <p class="brand">BlindaCredit</p>
+  <p>La red privada de protección crediticia</p>
+  <p class="copyright">© 2026 BlindaCredit. Todos los derechos reservados.</p>
+</footer>
+
+</body>
+</html>
